@@ -17,12 +17,42 @@
 
     <header>
         <nav class="wrap">
-            <div class="brand"><span class="pin"></span> Trisna Diah Ayu WUlandari</div>
+            <div class="brand">
+                <span class="pin"></span> Trisna Diah Ayu Wulandari
+            </div>
+            <button class="menu-toggle" aria-label="Buka menu">
+                ☰
+            </button>
             <div class="navlinks">
-                <a href="#tentang">Tentang</a>
-                <a href="#karya">Peta Karya</a>
-                <a href="#keahlian">Keahlian</a>
-                <a href="#kontak">Kontak</a>
+                <!-- ABOUT -->
+                <div class="nav-dropdown">
+                    <button type="button" class="dropdown-toggle">
+                        About <span>⌄</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#about-me">About me</a>
+                        <a href="#education">Education</a>
+                        <a href="#professional-experience">Professional Experience</a>
+                        <a href="#organization-experience">Organization Experience</a>
+                    </div>
+                </div>
+
+                <!-- PROJECTS -->
+                <div class="nav-dropdown">
+                    <button type="button" class="dropdown-toggle">
+                        Projects <span>⌄</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#mapping-projects">Mapping Projects</a>
+                        <a href="#webgis-projects">WebGIS Projects</a>
+                    </div>
+                </div>
+
+                <!-- SKILLS -->
+                <a href="#keahlian">Tools & Skills</a>
+
+                <!-- CONTACT -->
+                <a href="#kontak">Contact</a>
             </div>
         </nav>
     </header>
@@ -40,496 +70,467 @@
             <circle cx="250" cy="120" r="3" fill="#B9832E" />
         </svg>
         <div class="wrap">
-            <div class="hero-coord"> Blora, Jawa Tengah, Indonesia</div>
+            <div class="hero-coord"> Blora, Central Java, Indonesia</div>
             <h1>Trisna Diah Ayu Wulandari</h1>
             <div class="hero-role">GIS & Data Enthusiast</div>
             <!-- <p class="hero-desc">Saya menyusun data lapangan, citra satelit, dan survei menjadi peta yang jelas dibaca —
                 untuk perencanaan wilayah, konservasi, dan navigasi publik.</p> -->
-            <a class="hero-cta" href="#karya">Lihat peta karya</a>
+            <a class="hero-cta" href="#karya">Projects</a>
         </div>
     </section>
 
     <section id="tentang">
-
-    <!-- TENTANG -->
-    <div class="wrap about-intro">
-        <div class="section-tag">Tentang</div>
-
-        <div class="about-intro-grid">
-            <div>
-                <h2>Geographic Information Systems graduate with experience in data processing, quantitative analysis, spatial analysis, and data visualization.</h2>
-            </div>
-
-            <div class="about-description">
-                <p>
-                    Experienced in managing large datasets, conducting regional economic analysis,
-                    and developing data-driven recommendations. Proficient in Microsoft Excel,
-                    GIS, and spatial database management, with strong analytical and problem-solving skills.
-                </p>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- EDUCATION -->
-    <div class="wrap experience-section">
-
-        <div class="section-tag">Pendidikan</div>
-
-        <div class="education-list">
-
-            <div class="education-item">
-                <div class="education-year">2022–2026</div>
-
-                <div class="education-content">
-                    <h3>Universitas Gadjah Mada</h3>
-                    <p>Geographic Information System</p>
-                    <span>GPA: 3.51 / 4.00</span>
+        <!-- TENTANG -->
+        <div class="wrap about-intro" id="about-me">
+            <div class="section-tag">About me</div>
+            <div class="about-intro-grid">
+                <div>
+                    <h2>Geographic Information Systems graduate with experience in data processing, quantitative
+                        analysis, spatial analysis, and data visualization.</h2>
+                </div>
+                <div class="about-description">
+                    <p>
+                        Experienced in managing large datasets, conducting regional economic analysis,
+                        and developing data-driven recommendations. Proficient in Microsoft Excel,
+                        GIS, and spatial database management, with strong analytical and problem-solving skills.
+                    </p>
                 </div>
             </div>
-
-            <div class="education-item">
-                <div class="education-year">2019–2022</div>
-
-                <div class="education-content">
-                    <h3>SMA N 1 Blora</h3>
-                    <p>Natural Sciences</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- PENGALAMAN PROFESIONAL -->
-    <div class="wrap experience-section">
-
-        <div class="section-tag">Pengalaman Profesional</div>
-
-        <!-- Kementerian Transmigrasi -->
-        <div class="experience-card">
-
-            <div class="experience-info">
-                <div class="experience-meta">
-                    Agustus – Desember 2025
-                </div>
-
-                <h3>Kementerian Transmigrasi Republik Indonesia</h3>
-
-                <div class="experience-role">
-                    Asisten Peneliti, Output 2: Pengembangan Komoditas Unggulan KT Muting
-                </div>
-
-                <div class="experience-location">
-                    Tim Ekspedisi Patriot · Merauke, Indonesia
-                </div>
-
-                <ul>
-                    <li>
-                        Melakukan survei lapangan dan pengumpulan data primer 120 pemangku
-                        kepentingan dan warga/petani melalui observasi dan wawancara.
-                    </li>
-                    <li>
-                        Melakukan analisis spasial dan ekonomi wilayah untuk mengidentifikasi
-                        komoditas unggulan, rantai nilai, dan kelayakan ekonomi di Kawasan
-                        Transmigrasi Muting.
-                    </li>
-                    <li>
-                        Menghasilkan peta tematik dan analisis berbasis GIS yang menjadi dasar
-                        rekomendasi strategi pengembangan wilayah.
-                    </li>
-                    <li>
-                        Menyusun rekomendasi pengembangan sektor pertanian, peternakan,
-                        dan perkebunan berdasarkan potensi wilayah dan temuan lapangan.
-                    </li>
-                </ul>
-            </div>
-
-            <div class="experience-gallery">
-                <div class="gallery-track">
-                    <img src="images/transmigrasi-1.jpg" alt="Tim Ekspedisi Patriot">
-                    <img src="images/transmigrasi-2.jpg" alt="Survei lapangan">
-                    <img src="images/transmigrasi-3.jpg" alt="Kegiatan penelitian">
-                </div>
-
-                <button class="gallery-prev">‹</button>
-                <button class="gallery-next">›</button>
-            </div>
-
         </div>
 
 
-        <!-- ATR BPN -->
-        <div class="experience-card">
-
-            <div class="experience-info">
-                <div class="experience-meta">
-                    Januari – Juni 2025
+        <!-- EDUCATION -->
+        <div class="wrap experience-section" id="education">
+            <div class="section-tag">Education</div>
+            <div class="education-list">
+                <div class="education-item">
+                    <div class="education-year">2022–2026</div>
+                    <div class="education-content">
+                        <h3>Universitas Gadjah Mada</h3>
+                        <p>Geographic Information System</p>
+                        <span>GPA: 3.51 / 4.00</span>
+                    </div>
                 </div>
 
-                <h3>Kantor Wilayah ATR/BPN Jawa Timur</h3>
-
-                <div class="experience-role">
-                    GIS Intern
+                <div class="education-item">
+                    <div class="education-year">2019–2022</div>
+                    <div class="education-content">
+                        <h3>SMA N 1 Blora</h3>
+                        <p>Natural Sciences</p>
+                    </div>
                 </div>
-
-                <div class="experience-location">
-                    Surabaya, Indonesia
-                </div>
-
-                <ul>
-                    <li>
-                        Mengelola dan melakukan generalisasi lebih dari 14.000 data geospasial
-                        dari skala 1:5.000 menjadi 1:25.000 melalui agregasi, penyederhanaan,
-                        dan klasifikasi berbagai objek spasial.
-                    </li>
-                    <li>
-                        Mengembangkan platform WebGIS Jawa Timur dengan 38 peta interaktif
-                        kabupaten/kota, meningkatkan diseminasi informasi geospasial.
-                    </li>
-                    <li>
-                        Melakukan analisis spasial meliputi analisis overlay, query spasial,
-                        dan analisis kemiringan lereng menggunakan perangkat GIS dan Google Earth Engine.
-                    </li>
-                    <li>
-                        Menyusun peta tematik dan visualisasi spasial untuk mendukung penyajian
-                        informasi serta kebutuhan analisis wilayah.
-                    </li>
-                    <li>
-                        Mendukung Program Sertifikasi Tanah Wakaf melalui pengecekan status
-                        pendaftaran tanah wakaf berdasarkan data spasial.
-                    </li>
-                    <li>
-                        Mengembangkan Google Form untuk survei lapangan guna mendukung proses
-                        pengecekan dan pendataan lokasi tanah wakaf secara terstruktur.
-                    </li>
-                    <li>
-                        Menyusun modul teknis dan output geospasial yang meningkatkan efisiensi
-                        kerja dan standardisasi data di Kantor Wilayah ATR/BPN Jawa Timur.
-                    </li>
-                </ul>
             </div>
-
-            <div class="experience-gallery">
-                <div class="gallery-track">
-                    <img src="images/atrbpn-1.jpg" alt="Kegiatan GIS Intern">
-                    <img src="images/atrbpn-2.jpg" alt="WebGIS Jawa Timur">
-                    <img src="images/atrbpn-3.jpg" alt="Pemetaan geospasial">
-                </div>
-
-                <button class="gallery-prev">‹</button>
-                <button class="gallery-next">›</button>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- PENGALAMAN ORGANISASI -->
-    <div class="wrap experience-section">
-
-        <div class="section-tag">Pengalaman Organisasi</div>
-
-
-        <!-- POMN -->
-        <div class="experience-card">
-
-            <div class="experience-info">
-                <div class="experience-meta">
-                    April – November 2024
-                </div>
-
-                <h3>POMN (Program Ormawa Membangun Negeri)</h3>
-
-                <div class="experience-role">
-                    Bendahara
-                </div>
-
-                <div class="experience-location">
-                    Yogyakarta, Indonesia
-                </div>
-
-                <ul>
-                    <li>
-                        Mengelola keuangan organisasi secara menyeluruh, termasuk penyusunan
-                        Rencana Anggaran Biaya, pencatatan pengeluaran, dan pelaporan keuangan,
-                        dengan menjaga transparansi dan akuntabilitas penuh.
-                    </li>
-                    <li>
-                        Menyelenggarakan pelatihan digitalisasi yang membantu pelaku usaha
-                        mitra memperluas akses ke pasar digital.
-                    </li>
-                    <li>
-                        Memberikan pelatihan praktis WhatsApp Business untuk mendukung
-                        pengelolaan usaha mitra lokal yang lebih profesional dan efisien.
-                    </li>
-                    <li>
-                        Membuat peta tematik berbasis data geospasial untuk mendukung
-                        perencanaan program.
-                    </li>
-                </ul>
-            </div>
-
-            <div class="experience-gallery">
-                <div class="gallery-track">
-                    <img src="images/pomn-1.jpg" alt="Kegiatan POMN">
-                    <img src="images/pomn-2.jpg" alt="Pelatihan POMN">
-                    <img src="images/pomn-3.jpg" alt="Pemetaan POMN">
-                </div>
-
-                <button class="gallery-prev">‹</button>
-                <button class="gallery-next">›</button>
-            </div>
-
         </div>
 
 
-        <!-- PIONIR -->
-        <div class="experience-card">
-
-            <div class="experience-info">
-                <div class="experience-meta">
-                    2023 – 2024
+        <!-- PENGALAMAN PROFESIONAL -->
+        <div class="wrap experience-section" id="professional-experience">
+            <div class="section-tag">Professional Experience</div>
+            <!-- Kementerian Transmigrasi -->
+            <div class="experience-card">
+                <div class="experience-info">
+                    <div class="experience-meta">
+                        Agustus – Desember 2025
+                    </div>
+                    <h3>Kementerian Transmigrasi Republik Indonesia</h3>
+                    <div class="experience-role">
+                        Research Assistant, Output 2: Leading Commodity Development in Muting Transmigration Area
+                    </div>
+                    <div class="experience-location">
+                        Ekspedisi Patriot · Merauke, Indonesia
+                    </div>
+                    <ul>
+                        <li>
+                            Conducted field surveys and collected primary data from 120 stakeholders, residents, and
+                            farmers through interviews and observations.
+                        </li>
+                        <li>
+                            Performed spatial and regional economic analyses to identify leading commodities, value
+                            chains, and economic potential.
+                        </li>
+                        <li>
+                            Produced GIS-based thematic maps and analyses to support regional development
+                            recommendations.
+                        </li>
+                        <li>
+                            Developed recommendations for agriculture, livestock, and plantation sectors based on
+                            spatial potential and field findings.
+                        </li>
+                    </ul>
                 </div>
 
-                <h3>Pionir Permadani, Departemen Teknologi Kebumian</h3>
-
-                <div class="experience-role">
-                    Koordinator
+                <div class="experience-gallery">
+                    <div class="gallery-track">
+                        <img src="images/transmigrasi-1.jpg" alt="Tim Ekspedisi Patriot">
+                        <img src="images/transmigrasi-2.jpg" alt="Survei lapangan">
+                        <img src="images/transmigrasi-3.jpg" alt="Kegiatan penelitian">
+                    </div>
+                    <button class="gallery-prev">‹</button>
+                    <button class="gallery-next">›</button>
                 </div>
-
-                <div class="experience-location">
-                    Yogyakarta, Indonesia
-                </div>
-
-                <ul>
-                    <li>
-                        Memimpin perencanaan dan pelaksanaan kegiatan departemen,
-                        mengoordinasikan tim lintas fungsi untuk memastikan keberhasilan program.
-                    </li>
-                    <li>
-                        Menyelenggarakan kegiatan kompetitif dan kolaboratif yang memperkuat
-                        kreativitas, kerja sama tim, dan partisipasi mahasiswa.
-                    </li>
-                    <li>
-                        Menyusun laporan pertanggungjawaban yang sistematis untuk menjamin
-                        transparansi dan akuntabilitas kegiatan.
-                    </li>
-                </ul>
             </div>
 
-            <div class="experience-gallery">
-                <div class="gallery-track">
-                    <img src="images/pionir-1.jpg" alt="Kegiatan Pionir">
-                    <img src="images/pionir-2.jpg" alt="Kegiatan departemen">
+
+            <!-- ATR BPN -->
+            <div class="experience-card">
+                <div class="experience-info">
+                    <div class="experience-meta">
+                        Januari – Juni 2025
+                    </div>
+                    <h3>Kantor Wilayah ATR/BPN Jawa Timur</h3>
+                    <div class="experience-role">
+                        GIS Intern
+                    </div>
+                    <div class="experience-location">
+                        Surabaya, Indonesia
+                    </div>
+                    <ul>
+                        <li>
+                            Managed and generalized 14,000+ geospatial datasets from 1:5,000 to 1:25,000 scale through
+                            aggregation, simplification, and classification.
+                        </li>
+                        <li>
+                            Developed a WebGIS platform featuring 38 interactive maps for districts/cities across East
+                            Java.
+                        </li>
+                        <li>
+                            Performed spatial analyses, including overlay, spatial queries, and slope analysis using GIS
+                            tools and Google Earth Engine
+                        </li>
+                        <li>
+                            Produced thematic maps and spatial visualizations to support regional analysis and
+                            information dissemination.
+                        </li>
+                        <li>
+                            Supported the Waqf Land Certification Program by verifying waqf land registration status
+                            using spatial data.
+                        </li>
+                        <li>
+                            Developed Google Forms for field surveys to support the structured verification and
+                            documentation of waqf land locations.
+                        </li>
+                        <li>
+                            Prepared technical modules and geospatial outputs to improve workflow efficiency and data
+                            standardization.
+                        </li>
+                    </ul>
                 </div>
 
-                <button class="gallery-prev">‹</button>
-                <button class="gallery-next">›</button>
+                <div class="experience-gallery">
+                    <div class="gallery-track">
+                        <img src="images/atrbpn-1.jpg" alt="Kegiatan GIS Intern">
+                        <img src="images/atrbpn-2.jpg" alt="WebGIS Jawa Timur">
+                        <img src="images/atrbpn-3.jpg" alt="Pemetaan geospasial">
+                    </div>
+                    <button class="gallery-prev">‹</button>
+                    <button class="gallery-next">›</button>
+                </div>
             </div>
-
         </div>
 
 
-        <!-- KMDTK -->
-        <div class="experience-card">
-
-            <div class="experience-info">
-                <div class="experience-meta">
-                    2023 – 2024
+        <!-- PENGALAMAN ORGANISASI -->
+        <div class="wrap experience-section" id="organization-experience">
+            <div class="section-tag">Organization Experience</div>
+            <!-- POMN -->
+            <div class="experience-card">
+                <div class="experience-info">
+                    <div class="experience-meta">
+                        April – November 2024
+                    </div>
+                    <h3>POMN (Program Ormawa Membangun Negeri)</h3>
+                    <div class="experience-role">
+                        Bendahara
+                    </div>
+                    <div class="experience-location">
+                        Yogyakarta, Indonesia
+                    </div>
+                    <ul>
+                        <li>
+                            Managed organizational finances, including budgeting, expense tracking, and financial
+                            reporting, ensuring transparency and accountability.
+                        </li>
+                        <li>
+                            Conducted digitalization training, including WhatsApp Business, to support local partners in
+                            improving business operations and digital market access.
+                        </li>
+                        <li>
+                            Produced geospatial thematic maps to support program planning.
+                        </li>
+                    </ul>
                 </div>
 
-                <h3>KMDTK (Keluarga Mahasiswa Departemen Teknologi Kebumian)</h3>
+                <div class="experience-gallery">
+                    <div class="gallery-track">
+                        <img src="images/pomn-1.jpg" alt="Kegiatan POMN">
+                        <img src="images/pomn-2.jpg" alt="Pelatihan POMN">
+                        <img src="images/pomn-3.jpg" alt="Pemetaan POMN">
+                    </div>
 
-                <div class="experience-role">
-                    Staf Pengembangan Sumber Daya Manusia
+                    <button class="gallery-prev">‹</button>
+                    <button class="gallery-next">›</button>
                 </div>
-
-                <div class="experience-location">
-                    Yogyakarta, Indonesia
-                </div>
-
-                <ul>
-                    <li>
-                        Memberikan pendampingan dan solusi strategis kepada divisi lain
-                        untuk memperkuat kolaborasi dan kinerja lintas tim.
-                    </li>
-                    <li>
-                        Bertugas sebagai pembawa acara (MC) pada kegiatan organisasi penting,
-                        termasuk Upacara Pergantian Kepengurusan dan pengesahan AD/ART organisasi.
-                    </li>
-                </ul>
             </div>
 
-            <div class="experience-gallery">
-                <div class="gallery-track">
-                    <img src="images/kmdtk-1.jpg" alt="Kegiatan KMDTK">
-                    <img src="images/kmdtk-2.jpg" alt="Kegiatan organisasi">
+
+            <!-- PIONIR -->
+            <div class="experience-card">
+                <div class="experience-info">
+                    <div class="experience-meta">
+                        2023 – 2024
+                    </div>
+                    <h3>Pionir Permadani, Departemen Teknologi Kebumian</h3>
+                    <div class="experience-role">
+                        Koordinator
+                    </div>
+                    <div class="experience-location">
+                        Yogyakarta, Indonesia
+                    </div>
+                    <ul>
+                        <li>
+                            Led departmental planning and program implementation while coordinating cross-functional
+                            teams.
+                        </li>
+                        <li>
+                            Organized competitive and collaborative activities to strengthen creativity, teamwork, and
+                            student engagement.
+                        </li>
+                        <li>
+                            Prepared systematic accountability reports to ensure transparent program management.
+                        </li>
+                    </ul>
                 </div>
 
-                <button class="gallery-prev">‹</button>
-                <button class="gallery-next">›</button>
+                <div class="experience-gallery">
+                    <div class="gallery-track">
+                        <img src="images/pionir-1.jpg" alt="Kegiatan Pionir">
+                        <img src="images/pionir-2.jpg" alt="Kegiatan departemen">
+                    </div>
+                    <button class="gallery-prev">‹</button>
+                    <button class="gallery-next">›</button>
+                </div>
             </div>
 
+
+            <!-- KMDTK -->
+            <div class="experience-card">
+                <div class="experience-info">
+                    <div class="experience-meta">
+                        2023 – 2024
+                    </div>
+                    <h3>KMDTK (Keluarga Mahasiswa Departemen Teknologi Kebumian)</h3>
+                    <div class="experience-role">
+                        Human Resources Development Staff
+                    </div>
+                    <div class="experience-location">
+                        Yogyakarta, Indonesia
+                    </div>
+                    <ul>
+                        <li>
+                            Supported other divisions through strategic guidance and solutions to strengthen cross-team
+                            collaboration and performance.
+                        </li>
+                        <li>
+                            Served as Master of Ceremonies for key organizational events, including leadership
+                            transition and organizational bylaw ratification.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="experience-gallery">
+                    <div class="gallery-track">
+                        <img src="images/kmdtk-1.jpg" alt="Kegiatan KMDTK">
+                        <img src="images/kmdtk-2.jpg" alt="Kegiatan organisasi">
+                    </div>
+
+                    <button class="gallery-prev">‹</button>
+                    <button class="gallery-next">›</button>
+                </div>
+            </div>
         </div>
-
-    </div>
-
-</section>
+    </section>
 
     <section id="karya">
         <div class="wrap">
-            <div class="section-head">
+            <div class="section-head" id="mapping-projects">
                 <div>
-                    <div class="section-tag">Peta Karya</div>
-                    <h2 style="margin-top:10px;">Proyek pilihan</h2>
+                    <div class="section-tag">Projects</div>
+                    <h2 style="margin-top:10px;">Mapping Projects</h2>
                 </div>
             </div>
         </div>
 
         <div class="wrap">
             <div class="sheet-grid">
-
                 <div class="sheet-image">
                     <img src="images/Peta/BENCANA 10,4_page-0002.jpg" alt="Peta 1">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/BENCANA 10,4_page-0006.jpg" alt="Peta 2">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/Kemiringan lerneg sub das.png" alt="Peta 3">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/PETA ARAH ANGIN.jpg" alt="Peta 4">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/PETA BATAS LAUT_page-0001.jpg" alt="Peta 5">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/PETA CURAH HUJAN DAS OYO.jpg" alt="Peta 6">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/peta dampak kemiskinan terhadap kelayakan sanitasi.png" alt="Peta 7">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/PETA DAS & SUB-SUB DAS (1)_page-0001.jpg" alt="Peta 8">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/Peta Deteksi Perubahan Tanah dan Vegetasi.jpg" alt="Peta 9">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/Peta habitat bentik.png" alt="Peta 10">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/PETA HABITAT BENTIK_page-0001.jpg" alt="Peta 11">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/peta indikasi persebaran gar karbon monoksida.png" alt="Peta 12">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/Peta Kedalaman Muka Air Tanah.jpg" alt="Peta 13">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/Peta Interpolasi IDW.jpg" alt="Peta 14">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/Peta kekeruhan waduk gadjah mungkur.png" alt="Peta 15">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/peta klasifikasi TL.png" alt="Peta 16">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/PETA KMEANS_page-0001.jpg" alt="Peta 17">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/Peta Kontur Ketinggian Merapi.jpg" alt="Peta 18">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/PETA LOKASI BANK SAMPAH.png" alt="Peta 19">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/Peta Maximum Likelihood A11_page-0001.jpg" alt="Peta 20">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/Peta Maximum Likelihood A11_page-0002.jpg" alt="Peta 21">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/Peta Model Batimetri Saluran Merah Hijau Trendline Exponsensial.jpg"
                         alt="Peta 22">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/PETA MVI_page-0001.jpg" alt="Peta 23">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/PETA OBIA_page-0001.jpg" alt="Peta 24">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/PETA OBIA_page-0001.jpg" alt="Peta 25">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/PETA ORDE_page-0001.jpg" alt="Peta 26">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/Peta perubahan garis pantai.png" alt="Peta 27">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/Peta predicted tree cover linear fit.png" alt="Peta 28">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/peta produksi beras diy.png" alt="Peta 19">
                 </div>
-
-                                <div class="sheet-image">
+                <div class="sheet-image">
                     <img src="images/Peta/peta suhu permukaan laut.png" alt="Peta 33">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/PETA MEDIANELEV.jpg" alt="Peta 30">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/Peta Produksi Jagung.jpg" alt="Peta 31">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/PL Kab Blora.jpg" alt="Peta 32">
-                </div> 
-
+                </div>
                 <div class="sheet-image">
                     <img src="images/Peta/Peta Vegetasi Mangrove SAVI.jpg" alt="Peta 34">
                 </div>
-
                 <div class="sheet-image">
                     <img src="images/Peta/PL KECAMATAN DEPOK.jpg" alt="Peta 35">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="webgis-projects">
+        <div class="wrap">
+            <div class="section-head">
+                <div>
+                    <h2>WebGIS Projects</h2>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="sheet-grid">
+
+                <!-- WebGIS 1 -->
+                <div class="sheet-image webgis-card">
+                    <img src="images/Web/tableau_co2.png" alt="WebGIS Project 1">
+                    <a href="https://public.tableau.com/app/profile/trisna.wulandari/viz/PraktikumVDS9-TrisnaDiahAyu505883/CO2Emission"
+                        target="_blank" class="view-button">
+                        View
+                    </a>
+                </div>
+
+                <!-- WebGIS 2 -->
+                <div class="sheet-image webgis-card">
+                    <img src="images/Web/Sisada.png" alt="WebGIS Project 2">
+                    <a href="https://si-sada.vercel.app/" target="_blank" class="view-button">
+                        View
+                    </a>
+                </div>
+
+                <!-- WebGIS 3 -->
+                <div class="sheet-image webgis-card">
+                    <img src="images/Web/storymap_Bloramustika.png" alt="WebGIS Project 3">
+                    <a href="https://arcg.is/1y9z9P1" target="_blank" class="view-button">
+                        View
+                    </a>
+                </div>
+
+                <!-- WebGIS 4 -->
+                <div class="sheet-image webgis-card">
+                    <img src="images/Web/storymap_jakarta.png" alt="WebGIS Project 4">
+                    <a href="https://arcg.is/0iPnij0" target="_blank" class="view-button">
+                        View
+                    </a>
+                </div>
+
+                <!-- WebGIS 5 -->
+                <div class="sheet-image webgis-card">
+                    <img src="images/Web/Ini_Bloraku.png" alt="WebGIS Project 5">
+                    <a href="https://github.com/trisnawulan/info-blora.git" target="_blank" class="view-button">
+                        View
+                    </a>
+                </div>
+
+                <!-- WebGIS 6 -->
+                <div class="sheet-image webgis-card">
+                    <img src="images/Web/Labirin_Pogung.png" alt="WebGIS Project 6">
+                    <a href="https://github.com/trisnawulan/pgwl.git" target="_blank" class="view-button">
+                        View
+                    </a>
                 </div>
             </div>
         </div>
@@ -539,81 +540,171 @@
         <div class="wrap">
             <div class="section-head">
                 <div>
-                    <div class="section-tag">Keahlian</div>
-                    <h2 style="margin-top:10px;">Alat &amp; metode kerja</h2>
+                    <div class="section-tag"> Tools & Skill</div>
+                    <h2 style="margin-top:10px;">Tools</h2>
                 </div>
             </div>
         </div>
-        <div class="wrap" style="padding:0 32px;">
+        <div class="wrap">
             <div class="skills-row">
-                <div class="skill-cell">
-                    <div class="name">QGIS</div>
-                    <div class="note">pemetaan &amp; analisis harian</div>
-                </div>
-                <div class="skill-cell">
-                    <div class="name">ArcGIS Pro</div>
-                    <div class="note">pemodelan spasial lanjutan</div>
-                </div>
-                <div class="skill-cell">
-                    <div class="name">Python — GeoPandas</div>
-                    <div class="note">otomasi data geospasial</div>
-                </div>
-                <div class="skill-cell">
-                    <div class="name">Mapbox &amp; Leaflet.js</div>
-                    <div class="note">peta interaktif web</div>
-                </div>
-                <div class="skill-cell">
-                    <div class="name">Adobe Illustrator</div>
-                    <div class="note">kartografi cetak</div>
-                </div>
-                <div class="skill-cell">
-                    <div class="name">Google Earth Engine</div>
-                    <div class="note">analisis citra satelit</div>
-                </div>
+                <div class="skill-cell">ArcGIS</div>
+                <div class="skill-cell">QGIS</div>
+                <div class="skill-cell">Microsoft Office</div>
+                <div class="skill-cell">PgAdmin</div>
+                <div class="skill-cell">PostgreSQL</div>
+                <div class="skill-cell">Google Earth Engine</div>
+                <div class="skill-cell">ENVI</div>
+                <div class="skill-cell">Agisoft Metashape</div>
             </div>
         </div>
     </section>
 
-    <section id="kontak" style="border-bottom:none;">
-        <div class="wrap contact-grid">
-            <div class="contact-text">
-                <div class="section-tag">Kontak</div>
-                <h2
-                    style="margin-top:10px; font-family:var(--font-display); font-weight:600; font-size:clamp(28px,4vw,40px);">
-                    Ada wilayah yang perlu dipetakan?</h2>
-                <p style="margin-top:20px;">Terbuka untuk kolaborasi proyek pemetaan, konsultasi SIG, maupun pekerjaan
-                    lepas jangka pendek.</p>
-                <div class="contact-list">
-                    <a href="mailto:raka.adiyatma@contoh.id">raka.adiyatma@contoh.id</a>
-                    <a href="tel:+6281234567890">+62 812-3456-7890</a>
-                    <a href="#">linkedin.com/in/rakaadiyatma</a>
-                    <a href="#">behance.net/rakaadiyatma</a>
+    <section id="keahlian">
+        <div class="wrap">
+            <div class="section-head">
+                <div>
+                    <h2>Technical Skills</h2>
                 </div>
             </div>
-            <svg class="compass" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="100" cy="100" r="90" stroke="#26333F" stroke-width="1" />
-                <circle cx="100" cy="100" r="70" stroke="#CFC4A5" stroke-width="1" />
-                <line x1="100" y1="10" x2="100" y2="190" stroke="#CFC4A5" stroke-width="1" />
-                <line x1="10" y1="100" x2="190" y2="100" stroke="#CFC4A5" stroke-width="1" />
-                <path d="M100 30 L112 100 L100 170 L88 100 Z" fill="#26333F" />
-                <path d="M100 30 L112 100 L100 100 Z" fill="#B9832E" />
-                <text x="100" y="22" text-anchor="middle" font-family="IBM Plex Mono" font-size="11"
-                    fill="#26333F">N</text>
-                <text x="100" y="186" text-anchor="middle" font-family="IBM Plex Mono" font-size="11"
-                    fill="#5B6975">S</text>
-                <text x="16" y="104" text-anchor="middle" font-family="IBM Plex Mono" font-size="11"
-                    fill="#5B6975">W</text>
-                <text x="184" y="104" text-anchor="middle" font-family="IBM Plex Mono" font-size="11"
-                    fill="#5B6975">E</text>
-            </svg>
+        </div>
+        <div class="wrap">
+            <div class="skills-row">
+                <div class="skill-cell">GIS & Spatial Analysis</div>
+                <div class="skill-cell">Cartography</div>
+                <div class="skill-cell">Remote Sensing</div>
+                <div class="skill-cell">Data Analysis</div>
+                <div class="skill-cell">Data Processing</div>
+                <div class="skill-cell">Data Visualization</div>
+                <div class="skill-cell">Spatial Database Management</div>
+            </div>
         </div>
     </section>
+
+    <section id="keahlian">
+        <div class="wrap">
+            <div class="section-head">
+                <div>
+                    <h2 style="margin-top:10px;">Soft Skills</h2>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="skills-row">
+                <div class="skill-cell">Leadership</div>
+                <div class="skill-cell">Analytical Thinking</div>
+                <div class="skill-cell">Communication</div>
+                <div class="skill-cell">Team Collaboration</div>
+                <div class="skill-cell">Problem Solving</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="contact-section">
+    <div class="wrap">
+
+        <div class="contact-box">
+
+            <div class="contact-main">
+                <div class="section-tag">Let's Connect</div>
+
+<h2>
+    Let’s work<br>
+    together.
+</h2>
+
+<p>
+    Open to new opportunities, collaborations, and projects
+    in the geospatial field.
+</p>
+
+                <a href="mailto:trisnawulandari2310@gmail.com" class="contact-cta">
+                    Get in touch ↗
+                </a>
+            </div>
+
+            <div class="contact-details">
+
+                <a href="mailto:trisnawulandari2310@gmail.com" class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">
+                        trisnawulandari2310@gmail.com ↗
+                    </span>
+                </a>
+
+                <a href="https://wa.me/6285722929578"
+                   target="_blank"
+                   class="contact-item">
+                    <span class="contact-label">WhatsApp</span>
+                    <span class="contact-value">
+                        +62 857-2292-9578 ↗
+                    </span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/trisnadiahayuwulandari/"
+                   target="_blank"
+                   class="contact-item">
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-value">
+                        trisnadiahayuwulandari ↗
+                    </span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
     <footer class="wrap">
-        <span>© 2026 Raka Adiyatma</span>
-        <span>Dibuat dengan perhatian pada detail — seperti membaca peta.</span>
+        <span>© 2026 Trisna Diah Ayu Wulandari</span>
     </footer>
 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navlinks = document.querySelector('.navlinks');
+
+            /* HAMBURGER */
+            if (menuToggle && navlinks) {
+                menuToggle.addEventListener('click', function () {
+                    navlinks.classList.toggle('active');
+                });
+            }
+
+            /* DROPDOWN */
+            document.querySelectorAll('.dropdown-toggle').forEach(function (toggle) {
+
+                toggle.addEventListener('click', function () {
+
+                    const dropdown = this.closest('.nav-dropdown');
+
+                    if (window.innerWidth <= 680) {
+                        dropdown.classList.toggle('active');
+                    }
+
+                });
+
+            });
+
+            /* LINK DROPDOWN */
+            document.querySelectorAll('.dropdown-menu a').forEach(function (link) {
+
+                link.addEventListener('click', function () {
+                    navlinks.classList.remove('active');
+
+                    document.querySelectorAll('.nav-dropdown')
+                        .forEach(function (dropdown) {
+                            dropdown.classList.remove('active');
+                        });
+                });
+
+            });
+
+        });
+    </script>
 </body>
 
 </html>

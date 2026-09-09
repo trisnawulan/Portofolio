@@ -65,7 +65,7 @@
        position: sticky;
        top: 0;
        z-index: 50;
-       background: rgba(170, 249, 148, 0.88);
+       background: #9fb86f;
        backdrop-filter: blur(6px);
        border-bottom: 1px solid var(--line);
    }
@@ -94,44 +94,124 @@
        box-shadow: 0 0 0 3px rgba(185, 131, 46, 0.18);
    }
 
+   /* =========================
+   NAV DROPDOWN
+========================= */
+
    .navlinks {
        display: flex;
-       gap: 32px;
-       font-size: 14.5px;
+       align-items: center;
+       gap: 28px;
    }
 
-   .navlinks a {
+   .nav-dropdown {
        position: relative;
-       padding: 4px 0;
-       color: var(--ink-soft);
    }
 
-   .navlinks a:hover {
+   .dropdown-toggle {
+       background: none;
+       border: none;
+       padding: 0;
+       margin: 0;
+
+       display: flex;
+       align-items: center;
+       gap: 5px;
+
+       font-family: var(--font-body);
+       font-size: 15px;
        color: var(--ink);
+       cursor: pointer;
    }
 
-   .navlinks a::after {
-       content: "";
+   .dropdown-toggle span {
+       font-size: 14px;
+       transition: transform .2s ease;
+   }
+
+   .nav-dropdown:hover .dropdown-toggle span {
+       transform: rotate(180deg);
+   }
+
+   .dropdown-menu {
        position: absolute;
-       left: 0;
-       right: 0;
-       bottom: -3px;
-       height: 1px;
-       background: var(--amber);
-       transform: scaleX(0);
-       transform-origin: left;
-       transition: transform .25s ease;
+       top: 100%;
+       /* jangan pakai calc + 12px */
+       left: 50%;
+       transform: translateX(-50%);
+
+       min-width: 230px;
+
+       padding-top: 10px;
+
+       background: transparent;
+
+       display: flex;
+       flex-direction: column;
+
+       opacity: 0;
+       visibility: hidden;
+       pointer-events: none;
+
+       z-index: 1000;
    }
 
-   .navlinks a:hover::after {
-       transform: scaleX(1);
+   /* ISI DROPDOWN */
+   .dropdown-menu a {
+       background: #A8B88A;
+       padding: 12px 16px;
+
+       border-bottom: 1px solid var(--line);
+
+       font-family: 'IBM Plex Sans', sans-serif;
+       font-size: 14px;
+       white-space: nowrap;
+
+       transition: background .2s ease, color .2s ease;
    }
 
-   @media (max-width:680px) {
-       .navlinks {
-           display: none;
-       }
+   .dropdown-menu a:first-child {
+       border-top: 1px solid var(--line);
    }
+
+   .dropdown-menu a:last-child {
+       border-bottom: 1px solid var(--line);
+   }
+
+   .dropdown-menu a:hover {
+       background: #FF77D6;
+       color: #FBF9F2;
+   }
+
+   /* MUNCUL SAAT HOVER */
+   .nav-dropdown:hover .dropdown-menu {
+       opacity: 1;
+       visibility: visible;
+       pointer-events: auto;
+   }
+
+   .nav-dropdown:hover .dropdown-toggle span {
+       transform: rotate(180deg);
+   }
+
+   @media (max-width: 680px) {
+
+    .navlinks > a,
+    .dropdown-toggle {
+        padding: 15px 32px;
+        border-bottom: 1px solid var(--line);
+        text-align: center;
+        justify-content: center;
+    }
+
+    .nav-dropdown {
+        width: 100%;
+    }
+
+    .dropdown-toggle {
+        width: 100%;
+    }
+}
 
    /* ---------- HERO ---------- */
    .hero {
@@ -162,13 +242,13 @@
        max-width: 14ch;
    }
 
-.hero-role {
-    font-family: 'Fraunces', serif;
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--ink-soft);
-    margin-top: 22px;
-}
+   .hero-role {
+       font-family: 'Fraunces', serif;
+       font-size: 20px;
+       font-weight: 500;
+       color: var(--ink-soft);
+       margin-top: 22px;
+   }
 
    .hero-desc {
        max-width: 46ch;
@@ -178,19 +258,19 @@
    }
 
    .hero-cta {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 14.5px;
-    font-weight: 500;
-    margin-top: 40px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 13px 26px;
-    background: var(--ink);
-    color: var(--white);
-    border: 1px solid var(--ink);
-    transition: background .2s ease, color .2s ease;
-}
+       font-family: 'IBM Plex Sans', sans-serif;
+       font-size: 14.5px;
+       font-weight: 500;
+       margin-top: 40px;
+       display: inline-flex;
+       align-items: center;
+       gap: 10px;
+       padding: 13px 26px;
+       background: var(--ink);
+       color: var(--white);
+       border: 1px solid var(--ink);
+       transition: background .2s ease, color .2s ease;
+   }
 
    .hero-cta:hover {
        background: transparent;
@@ -218,7 +298,7 @@
 
    /* ---------- SECTION SHARED ---------- */
    section {
-       padding: 96px 0;
+       padding: 40px 0;
        border-bottom: 1px solid var(--line);
    }
 
@@ -227,14 +307,19 @@
        align-items: baseline;
        justify-content: space-between;
        gap: 24px;
-       margin-bottom: 52px;
+       margin-bottom: 15px;
        flex-wrap: wrap;
    }
 
    .section-tag {
-       font-family: var(--font-mono);
-       font-size: 13px;
-       color: var(--moss);
+       display: inline-block;
+       background: #6B7D52;
+       color: #FBF9F2;
+       padding: 9px 18px;
+       font-family: 'IBM Plex Sans', sans-serif;
+       font-size: 15px;
+       font-weight: 700;
+       letter-spacing: 0.03em;
    }
 
    .section-head h2 {
@@ -243,340 +328,655 @@
        font-size: clamp(28px, 4vw, 40px);
    }
 
+   .experience-section>.section-tag {
+       margin-bottom: 5px;
+   }
+
    /* ---------- ABOUT ---------- */
- /* ---------- ABOUT & EXPERIENCE ---------- */
+   /* ---------- ABOUT & EXPERIENCE ---------- */
 
-.about-intro {
-    margin-bottom: 90px;
-}
+   .about-intro {
+       background: #9fb86f;
+       padding: 45px 50px;
+       margin-bottom: 90px;
 
-.about-intro-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-    gap: 80px;
-    margin-top: 25px;
-}
+   }
 
-.about-intro h2 {
-    font-family: var(--font-display);
-    font-size: clamp(28px, 4vw, 42px);
-    line-height: 1.15;
-    font-weight: 600;
-}
+   .about-intro-grid {
+       display: grid;
+       grid-template-columns: 1.15fr 1fr;
+       gap: 80px;
+       margin-top: 25px;
+   }
 
-.about-description {
-    align-self: end;
-}
+   .about-intro h2 {
+       font-family: var(--font-display);
+       font-size: clamp(28px, 4vw, 42px);
+       line-height: 1.15;
+       font-weight: 600;
+   }
 
-.about-description p {
-    font-size: 17px;
-    line-height: 1.7;
-    color: var(--ink-soft);
-    text-align: justify;
-}
+   .about-description {
+       align-self: end;
+   }
 
-
-/* EDUCATION */
-
-.experience-section {
-    margin-bottom: 90px;
-}
-
-.education-list {
-    margin-top: 28px;
-    border-top: 1px solid var(--line);
-}
-
-.education-item {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 30px;
-    padding: 25px 0;
-    border-bottom: 1px solid var(--line);
-}
-
-.education-year {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--moss);
-}
-
-.education-content h3 {
-    font-family: var(--font-display);
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-.education-content p {
-    color: var(--ink-soft);
-    margin-bottom: 4px;
-}
-
-.education-content span {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--moss);
-}
+   .about-description p {
+       font-size: 17px;
+       line-height: 1.7;
+       color: var(--ink-soft);
+       text-align: justify;
+   }
 
 
-/* EXPERIENCE */
+   /* EDUCATION */
 
-.experience-section > .section-tag {
-    margin-bottom: 28px;
-}
+   .experience-section {
+       margin-bottom: 40px;
+   }
 
-.experience-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
-    gap: 55px;
-    padding: 45px 0;
-    border-top: 1px solid var(--line);
-}
+   .education-list {
+       margin-top: 8px;
+       border-top: 1px solid var(--line);
+   }
 
-.experience-info {
-    min-width: 0;
-}
+   .education-item {
+       display: grid;
+       grid-template-columns: 150px 1fr;
+       gap: 30px;
+       padding: 25px 0;
+       border-bottom: 1px solid var(--line);
+   }
 
-.experience-meta {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--moss);
-    margin-bottom: 10px;
-}
+   .education-year {
+       font-family: var(--font-mono);
+       font-size: 13px;
+       color: var(--moss);
+   }
 
-.experience-info h3 {
-    font-family: var(--font-display);
-    font-size: 27px;
-    line-height: 1.2;
-    margin-bottom: 8px;
-}
+   .education-content h3 {
+       font-family: var(--font-display);
+       font-size: 24px;
+       margin-bottom: 5px;
+   }
 
-.experience-role {
-    font-size: 15px;
-    font-weight: 500;
-    margin-bottom: 4px;
-}
+   .education-content p {
+       color: var(--ink-soft);
+       margin-bottom: 4px;
+   }
 
-.experience-location {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--ink-soft);
-    margin-bottom: 24px;
-}
+   .education-content span {
+       font-family: var(--font-mono);
+       font-size: 13px;
+       color: var(--moss);
+   }
 
-.experience-info ul {
-    padding-left: 20px;
-}
+   /* Rapatkan Education dengan daftar pendidikan */
+   .experience-section .education-list {
+       margin-top: 0 !important;
+       padding-top: 0 !important;
+   }
 
-.experience-info li {
-    font-size: 15px;
-    color: var(--ink-soft);
-    line-height: 1.65;
-    margin-bottom: 10px;
-    text-align: justify;
-}
+   .experience-section>.section-tag {
+       margin-bottom: 0 !important;
+   }
 
+   #tentang {
+       padding-bottom: 5px;
+   }
 
-/* GALLERY */
-
-.experience-gallery {
-    position: relative;
-    height: 390px;
-    overflow: hidden;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, .2);
-}
-
-.gallery-track {
-    display: flex;
-    height: 100%;
-    transition: transform .4s ease;
-}
-
-.gallery-track img {
-    width: 100%;
-    height: 100%;
-    flex: 0 0 100%;
-    object-fit: cover;
-    display: block;
-}
+   #karya {
+       padding-top: 5px;
+   }
 
 
-/* tombol slider */
 
-.gallery-prev,
-.gallery-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 38px;
-    height: 38px;
-    border: 1px solid var(--ink);
-    background: rgba(250, 201, 230, .85);
-    color: var(--ink);
-    cursor: pointer;
-    font-size: 24px;
-    line-height: 1;
-}
+   /* EXPERIENCE */
 
-.gallery-prev {
-    left: 12px;
-}
+   .experience-section>.section-tag {
+       margin-bottom: 28px;
+   }
 
-.gallery-next {
-    right: 12px;
-}
+   .experience-card {
+       display: grid;
+       grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+       gap: 55px;
+       padding: 45px 0;
+       border-top: 1px solid var(--line);
+   }
 
-.gallery-prev:hover,
-.gallery-next:hover {
-    background: var(--ink);
-    color: var(--white);
-}
+   .experience-info {
+       min-width: 0;
+   }
+
+   .experience-meta {
+       font-family: var(--font-mono);
+       font-size: 12px;
+       color: var(--moss);
+       margin-bottom: 10px;
+   }
+
+   .experience-info h3 {
+       font-family: var(--font-display);
+       font-size: 27px;
+       line-height: 1.2;
+       margin-bottom: 8px;
+   }
+
+   .experience-role {
+       font-size: 15px;
+       font-weight: 500;
+       margin-bottom: 4px;
+   }
+
+   .experience-location {
+       font-family: var(--font-mono);
+       font-size: 12px;
+       color: var(--ink-soft);
+       margin-bottom: 24px;
+   }
+
+   .experience-info ul {
+       padding-left: 20px;
+   }
+
+   .experience-info li {
+       font-size: 15px;
+       color: var(--ink-soft);
+       line-height: 1.65;
+       margin-bottom: 10px;
+       text-align: justify;
+   }
+
+   /* Rapikan jarak Professional Experience */
+   .experience-section {
+       margin-bottom: 30px !important;
+   }
+
+   .experience-section>.section-tag {
+       margin-bottom: 5px !important;
+   }
+
+   .experience-card {
+       padding-top: 10px !important;
+       padding-bottom: 30px !important;
+   }
 
 
-@media (max-width: 800px) {
+   /* GALLERY */
 
-    .about-intro-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
+   .experience-gallery {
+       position: relative;
+       height: 390px;
+       overflow: hidden;
+       border-radius: 6px;
+       background: rgba(255, 255, 255, .2);
+   }
 
-    .experience-card {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
+   .gallery-track {
+       display: flex;
+       height: 100%;
+       transition: transform .4s ease;
+   }
 
-    .experience-gallery {
-        height: 300px;
-    }
+   .gallery-track img {
+       width: 100%;
+       height: 100%;
+       flex: 0 0 100%;
+       object-fit: cover;
+       display: block;
+   }
 
-    .education-item {
-        grid-template-columns: 1fr;
-        gap: 8px;
-    }
-}
+
+   /* tombol slider */
+
+   .gallery-prev,
+   .gallery-next {
+       position: absolute;
+       top: 50%;
+       transform: translateY(-50%);
+       width: 38px;
+       height: 38px;
+       border: 1px solid var(--ink);
+       background: rgba(250, 201, 230, .85);
+       color: var(--ink);
+       cursor: pointer;
+       font-size: 24px;
+       line-height: 1;
+   }
+
+   .gallery-prev {
+       left: 12px;
+   }
+
+   .gallery-next {
+       right: 12px;
+   }
+
+   .gallery-prev:hover,
+   .gallery-next:hover {
+       background: var(--ink);
+       color: var(--white);
+   }
+
+
+   @media (max-width: 800px) {
+
+       .about-intro-grid {
+           grid-template-columns: 1fr;
+           gap: 25px;
+       }
+
+       .experience-card {
+           grid-template-columns: 1fr;
+           gap: 30px;
+       }
+
+       .experience-gallery {
+           height: 300px;
+       }
+
+       .education-item {
+           grid-template-columns: 1fr;
+           gap: 8px;
+       }
+   }
 
 
    /* ---------- PROJECTS ---------- */
 
-#karya .sheet-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 10px;
-    row-gap: 10px;
-}
-
-#karya .sheet-image {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border-radius: 6px;
-}
-
-#karya .sheet-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.4s ease;
-}
-
-#karya .sheet-image:hover img {
-    transform: scale(1.05);
-}
-
-@media (max-width: 720px) {
-    #karya .sheet-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-   /* ---------- SKILLS ---------- */
-   .skills-row {
+   #karya .sheet-grid {
        display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-       gap: 1px;
-       background: var(--line);
-       border: 1px solid var(--line);
+       grid-template-columns: repeat(3, 1fr);
+       column-gap: 10px;
+       row-gap: 10px;
    }
 
-   .skill-cell {
-       background: var(--paper);
-       padding: 26px 24px;
+   #karya .sheet-image {
+       width: 100%;
+       margin: 0;
+       padding: 0;
+       overflow: hidden;
+       border-radius: 6px;
    }
 
-   .skill-cell .name {
-       font-size: 16px;
-       margin-bottom: 6px;
+   #karya .sheet-image img {
+       width: 100%;
+       height: auto;
+       display: block;
+       transition: transform 0.4s ease;
    }
 
-   .skill-cell .note {
-       font-family: var(--font-mono);
-       font-size: 12px;
-       color: var(--ink-soft);
+   #karya .sheet-image:hover img {
+       transform: scale(1.05);
    }
 
-   /* ---------- CONTACT ---------- */
-   .contact-grid {
-       display: grid;
-       grid-template-columns: 1fr 1fr;
-       gap: 64px;
-       align-items: center;
-   }
-
-   @media (max-width:800px) {
-       .contact-grid {
+   @media (max-width: 720px) {
+       #karya .sheet-grid {
            grid-template-columns: 1fr;
        }
    }
 
-   .contact-text p {
-       color: var(--ink-soft);
-       font-size: 17px;
-       max-width: 44ch;
+   #karya {
+       padding-top: 25px;
    }
 
-   .contact-list {
-       margin-top: 32px;
-   }
+/* =========================
+   WEBGIS PROJECTS
+========================= */
 
-   .contact-list a {
-       display: block;
-       font-family: var(--font-mono);
-       font-size: 15px;
-       padding: 12px 0;
-       border-bottom: 1px solid var(--line);
-       color: var(--ink);
-   }
+#webgis-projects .sheet-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+    width: 100%;
+}
 
-   .contact-list a:hover {
-       color: var(--amber);
-   }
+#webgis-projects .sheet-image {
+    position: relative;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    border-radius: 6px;
+}
 
-   .compass {
-       width: 100%;
-       max-width: 280px;
-       margin: 0 auto;
-       display: block;
-   }
+#webgis-projects .sheet-image img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
 
-   footer {
-       padding: 36px 0;
-       font-family: var(--font-mono);
-       font-size: 12.5px;
-       color: var(--ink-soft);
-       display: flex;
-       justify-content: space-between;
-       flex-wrap: wrap;
+#webgis-projects .sheet-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Overlay */
+#webgis-projects .webgis-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(54, 77, 42, .35);
+    opacity: 0;
+    transition: opacity .3s ease;
+    z-index: 1;
+}
+
+#webgis-projects .webgis-card:hover::after {
+    opacity: 1;
+}
+
+/* View button */
+#webgis-projects .view-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+
+    padding: 10px 24px;
+
+    background: #FBF9F2;
+    color: #364D2A;
+
+    border: 1px solid #364D2A;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    opacity: 0;
+    transition: opacity .3s ease, background .2s ease;
+}
+
+#webgis-projects .webgis-card:hover .view-button {
+    opacity: 1;
+}
+
+#webgis-projects .view-button:hover {
+    background: #6B7D52;
+    color: #ffa9ec;
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+    #webgis-projects .sheet-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+   /* ---------- SKILLS ---------- */
+
+   .skills-row {
+       display: grid;
+       grid-template-columns: repeat(4, 1fr);
        gap: 8px;
+       background: transparent;
    }
 
-   @media (prefers-reduced-motion: reduce) {
-       html {
-           scroll-behavior: auto;
+   .skill-cell {
+       background: #A8B88A;
+       border: 1px solid #FF77D6;
+       padding: 18px 20px;
+
+       font-family: 'IBM Plex Sans', sans-serif;
+       font-size: 15px;
+       font-weight: 600;
+       color: #26333F;
+
+       text-align: center;
+       transition: all 0.25s ease;
+   }
+
+   .skill-cell:hover {
+       background: #6B7D52;
+       color: #FBF9F2;
+       transform: translateY(-3px);
+   }
+
+   #keahlian .section-head {
+       margin-bottom: 15px;
+   }
+ #keahlian {
+    padding: 30px 0;
+}
+
+#keahlian + #keahlian {
+    padding-top: 0;
+}
+   @media (max-width: 680px) {
+       .skills-row {
+           grid-template-columns: repeat(2, 1fr);
+       }
+   }
+
+
+   /* ---------- CONTACT ---------- */
+   /* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    padding: 70px 0 40px;
+    border-bottom: none;
+}
+
+.contact-box {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 70px;
+
+    background: #364D2A;
+    padding: 55px 60px;
+
+    border: 1px solid #26333F;
+    position: relative;
+    overflow: hidden;
+}
+
+/* dekorasi grid kecil */
+.contact-box::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+
+    right: -70px;
+    top: -70px;
+
+    border: 1px solid rgba(255, 119, 214, 0.45);
+    border-radius: 50%;
+}
+
+.contact-box::after {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+
+    right: -35px;
+    top: -35px;
+
+    border: 1px solid rgba(255, 119, 214, 0.3);
+    border-radius: 50%;
+}
+
+
+/* LEFT */
+
+.contact-main {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-main .section-tag {
+    color: #A8B88A;
+    margin-bottom: 15px;
+}
+
+.contact-main h2 {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.08;
+    font-weight: 600;
+    color: #FBF9F2;
+}
+
+.contact-main p {
+    max-width: 550px;
+    margin-top: 22px;
+
+    color: #DCE3D4;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.contact-cta {
+    display: inline-block;
+    margin-top: 30px;
+
+    padding: 12px 22px;
+
+    background: #A8B88A;
+    color: #26333F;
+
+    border: 1px solid #A8B88A;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: all .25s ease;
+}
+
+.contact-cta:hover {
+    background: #FBF9F2;
+    border-color: #FBF9F2;
+    transform: translateY(-3px);
+}
+
+
+/* RIGHT */
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid rgba(168, 184, 138, .45);
+
+    transition: padding-left .25s ease;
+}
+
+.contact-item:first-child {
+    border-top: 1px solid rgba(168, 184, 138, .45);
+}
+
+.contact-item:hover {
+    padding-left: 10px;
+}
+
+.contact-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+
+    color: #A8B88A;
+    margin-bottom: 6px;
+}
+
+.contact-value {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+    color: #FBF9F2;
+}
+
+
+/* =========================
+   FOOTER BAR
+========================= */
+
+footer {
+    background: #26333F;
+    color: #FBF9F2;
+    padding: 22px 0;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+}
+
+.footer-copy {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #A8B88A;
+}
+   /* ---------- MOBILE MENU ---------- */
+
+   .menu-toggle {
+       display: none;
+       background: none;
+       border: none;
+       font-size: 28px;
+       color: var(--ink);
+       cursor: pointer;
+       padding: 4px;
+   }
+
+
+   /* HP */
+   @media (max-width: 680px) {
+
+       nav.wrap {
+           position: relative;
        }
 
-       * {
-           transition: none !important;
+       .menu-toggle {
+           display: block;
        }
+
+       .navlinks {
+           display: none;
+           position: absolute;
+           top: 76px;
+           left: 0;
+           right: 0;
+
+           flex-direction: column;
+           gap: 0;
+
+           background: rgba(170, 249, 148, 0.97);
+           border-bottom: 1px solid var(--line);
+       }
+
+       .navlinks.active {
+           display: flex;
+       }
+
+       .navlinks a {
+           padding: 15px 32px;
+           border-bottom: 1px solid var(--line);
+       }
+
    }
